@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.nav-bar {
+    background-color: #F0F6F7FF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.nav-bar ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+.nav-bar .left{
+    float: left;
+}
+.nav-bar .right{
+    float: right;
+}
+.nav-bar li a {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #323237;
+    font-size: larger;
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+
+.container .section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    background-color: #669DB3FF;
+    /* background-color: #F0F6F7FF; */
+}
+
+.container .section .content {
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.container .section .content .eyecatcher {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 400px;
+    width: 800px;
+    color: #323237;
+    background-color: #F0F6F7FF;
+}
+
+.btn-flip {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+}
+.btn-flip:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover:before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: #FF4F58FF;
+    /* background: #A89C94FF; */
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #323237;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: #A89C94FF;
+    /* background: #FF4F58FF; */
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+}
