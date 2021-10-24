@@ -55,7 +55,7 @@ button {
     border: none;
     padding: 15px 30px;
     text-align: center;
-    box-shadow: 0px 15px 50px 0px var(--clr-gray);
+    box-shadow: 0px 5px 50px 0px var(--clr-gray);
     text-decoration: none;
     background-color: var(--clr-accent);
     border-radius: 12px;
@@ -64,15 +64,15 @@ button {
 }
 
 .container {
-    margin: 50px;
+    /* margin: 50px; */
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 25% 25%;
     justify-content: center;
-    align-items: center;
+    gap: 5%;
+    width: 100%;
 }
 .container .header-box {
-    margin-right: 200px;
-    width: 640px;
+    margin: auto;
 }
 .container .header-box h2 {
     font-size: var(--fs-xl);
@@ -82,16 +82,17 @@ button {
     padding: 15px 50px;
 }
 .container img {
-    margin-left: 200px;
+    margin-left: 100px;
 }
-@media (max-width: 900px) {
+
+@media (min-width: 900px) {
     :root {
         --fs-h1: 1.5rem;
         --fs-h2: 0.75rem;
         --fs-nav: 0.75rem;
     }
     nav {
-        grid-template-columns: 50% auto auto;
+        grid-template-columns: 60% auto auto;
     }
     nav .item button {
         display: none;
@@ -99,15 +100,27 @@ button {
     nav .item p {
         display: none;
     }
-}
 
-@media (min-width: 600px) {
-}
-
-@media (min-width: 900px) {
-    :root {
+    .container {
+        display: block;
+        margin: auto;
+        width: 100%;
     }
-    body {
-        overflow: hidden;
+
+    .container .header-box {
+        margin: 100px 0;
+        text-align: center;
+        padding: 0 20%;
+    }
+    .container .header-box h2 {
+        font-size: var(--fs-xl);
+    }
+    .container .header-box button {
+        margin: 40px 0;
+        padding: 15px 50px;
+    }
+    .container img {
+        display: block;
+        margin: auto;
     }
 }
