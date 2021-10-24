@@ -74,6 +74,10 @@ button {
 .container .header-box {
     margin: auto;
 }
+.container .header-box p {
+    margin: auto;
+    font-size: var(--fs-body);
+}
 .container .header-box h2 {
     font-size: var(--fs-xl);
 }
@@ -85,14 +89,12 @@ button {
     margin-left: 100px;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 1300px) {
     :root {
+        --fs-xl: 2.5rem;
         --fs-h1: 1.5rem;
-        --fs-h2: 0.75rem;
         --fs-nav: 0.75rem;
-    }
-    nav {
-        grid-template-columns: 60% auto auto;
+        --fs-body: 0.9rem;
     }
     nav .item button {
         display: none;
@@ -112,9 +114,6 @@ button {
         text-align: center;
         padding: 0 20%;
     }
-    .container .header-box h2 {
-        font-size: var(--fs-xl);
-    }
     .container .header-box button {
         margin: 40px 0;
         padding: 15px 50px;
@@ -122,5 +121,14 @@ button {
     .container img {
         display: block;
         margin: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    :root {
+        --fs-xl: 2rem;
+        --fs-h1: 1.5rem;
+        --fs-nav: 0.75rem;
+        --fs-body: 0.8rem;
     }
 }
