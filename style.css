@@ -1,12 +1,36 @@
 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-semi: 500;
+    --fw-bold: 700;
+    --fs-h1: 2.5rem;
+    --fs-h2: 1.75rem;
+    --fs-xl: 3rem;
+    --fs-nav: 1.25rem;
+    --fs-button: 1.25rem;
+    --fs-body: 1rem;
+    --clr-light: #fff;
+    --clr-gray: #989898;
+    --clr-dark: #444;
+    --clr-accent: #770579;
+}
+
+body {
     margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    font-family: "Montserrat", sans-serif;
+    color: var(--clr-dark);
+    min-height: 100vh;
 }
 
 nav {
     display: grid;
-    grid-template-columns: 70% auto auto;
+    grid-template-columns: 60% auto auto;
     height: 150px;
     justify-content: center;
     background-color: white;
@@ -16,24 +40,74 @@ nav .item {
     margin: 0px 30px;
     display: flex;
     align-items: center;
-    font-size: x-large;
 }
 
 nav .item h1 {
-    color: #770579;
+    font-size: var(--fs-h1);
+    color: var(--clr-accent);
 }
 
-nav .item button {
-    border: none;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0px 15px 50px 0px gray;
-    text-decoration: none;
-    font-size: x-large;
-    background-color: #770579;
-    border-radius: 12px;
-    color: white;
-}
 nav .item p {
-    font-size: x-large;
+    font-size: var(--fs-nav);
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    box-shadow: 0px 15px 50px 0px var(--clr-gray);
+    text-decoration: none;
+    background-color: var(--clr-accent);
+    border-radius: 12px;
+    color: var(--clr-light);
+    font-size: var(--fs-button);
+}
+
+.container {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+.container .header-box {
+    margin-right: 200px;
+    width: 640px;
+}
+.container .header-box h2 {
+    font-size: var(--fs-xl);
+}
+.container .header-box button {
+    margin-top: 20px;
+    padding: 15px 50px;
+}
+.container img {
+    margin-left: 200px;
+}
+@media (max-width: 900px) {
+    :root {
+        --fs-h1: 1.5rem;
+        --fs-h2: 0.75rem;
+        --fs-nav: 0.75rem;
+    }
+    nav {
+        grid-template-columns: 50% auto auto;
+    }
+    nav .item button {
+        display: none;
+    }
+    nav .item p {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+}
+
+@media (min-width: 900px) {
+    :root {
+    }
+    body {
+        overflow: hidden;
+    }
 }
