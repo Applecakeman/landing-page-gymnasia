@@ -157,9 +157,9 @@ nav {
 
 .challenge-container {
   position: absolute;
-  top: 45rem;
+  top: 10rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   max-width: 45rem;
   text-align: center;
 }
@@ -179,20 +179,26 @@ nav {
   padding: 0.8rem 5rem;
 }
 
-.how-it-works-challenge {
+.how-it-works-section {
+  text-align: center;
 }
 
 .how-it-works-animation {
   margin: 10rem auto;
-  width: 90vw;
+  width: 70vw;
   text-align: center;
   border: 1px solid #eee;
   box-shadow: 0.5rem 0.5rem 1rem 0 #888;
+  background-color: #fcf5fc;
+}
+
+.how-it-works-animation img {
+  width: 65%;
 }
 
 .how-it-works {
-  margin: 2rem 0;
-  font-size: 4.4rem;
+  margin: 4rem 0 0 0;
+  font-size: 5.2rem;
   color: #300031;
   font-weight: 500;
 }
@@ -210,10 +216,6 @@ nav {
     justify-self: center;
     grid-column: 1/-1;
   }
-
-  .challenge-container {
-    top: 50rem;
-  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -226,8 +228,5 @@ nav {
 @media only screen and (max-width: 450px) {
   html {
     font-size: 40%;
-  }
-  .challenge-container {
-    top: 65rem;
   }
 }
