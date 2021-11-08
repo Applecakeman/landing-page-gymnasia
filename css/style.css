@@ -168,7 +168,7 @@ nav {
 }
 
 .challenge {
-  max-width: 32rem;
+  max-width: 42rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -209,7 +209,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 0.8rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.4rem;
   align-items: center;
 }
 
@@ -227,8 +227,8 @@ nav {
 .challenge-athlete-rower-image {
   grid-column: 1/-1;
   justify-self: center;
-  width: 70%;
-  margin-bottom: 1.2rem;
+  width: 140%;
+  margin-bottom: 2.4rem;
 }
 
 .challenge-rules {
