@@ -54,7 +54,7 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   grid-column: 1/3;
 }
 
@@ -67,7 +67,7 @@ nav {
   font-size: 2rem;
   font-weight: 500;
   padding: 0.8rem 2rem;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   cursor: pointer;
   box-shadow: 0.1rem 0.4rem 0.1rem 0 #444;
   border: 0.3rem solid #851e87;
@@ -140,7 +140,7 @@ nav {
   width: 0;
   height: 0;
   border-left: 50vw solid transparent;
-  border-top: 40vh solid #ffe4ff;
+  border-top: 50vh solid #ffe4ff;
 }
 
 .triangle-middle {
@@ -152,30 +152,122 @@ nav {
   width: 0;
   height: 0;
   border-right: 50vw solid transparent;
-  border-bottom: 40vh solid #ffe4ff;
-}
-
-.challenge-container {
-  position: absolute;
-  top: 10rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-  max-width: 45rem;
-  text-align: center;
+  border-bottom: 50vh solid #ffe4ff;
 }
 
 .next-challenge {
-  font-size: 4.4rem;
+  position: absolute;
+  min-width: 60%;
+  top: 7%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 0);
   color: #300031;
+  font-size: 3rem;
   font-weight: 500;
 }
 
 .challenge {
-  height: 70vh;
+  max-width: 32rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4.8rem;
+  background-color: #fff;
+  box-shadow: 0.5rem 0.5rem 1rem 0 #888;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.challenge h3 {
+  color: #300031;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.challenge p,
+.challenge-types {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.challenge-date-text {
+  color: #851e87;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 3.6rem;
+}
+.challenge-date-text p:first-child {
+  margin-bottom: 0.2rem;
+}
+
+.challenge-created-by {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  align-items: center;
+}
+
+.challenge-created-by h4 {
+  grid-column: 1 / -1;
+  color: #300031;
+  font-size: 1.8rem;
+}
+
+.challenge-creator-avatar {
+  width: 50%;
+  border-radius: 100%;
+}
+
+.challenge-athlete-rower-image {
+  grid-column: 1/-1;
+  justify-self: center;
+  width: 70%;
+  margin-bottom: 1.2rem;
+}
+
+.challenge-rules {
+  margin-bottom: 1.2rem;
+}
+
+.challenge-types {
+  margin: 0 0 1.8rem 3.2rem;
+}
+.challenge-disciplines {
+  margin-top: 0.4rem;
+  margin-left: 1.2rem;
+}
+
+.challenge-entry-fee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.challenge-fee-text {
+  font-size: 1.8rem;
+  padding: 0.8rem 0;
+}
+
+.challenge-fee {
+  font-size: 1.8rem;
+  background-color: #ffe4ff;
+  padding: 0.8rem 2.4rem;
+  border-radius: 1rem;
 }
 
 .register:link,
 .register:visited {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translate(-50%, 0);
   padding: 0.8rem 5rem;
 }
 
@@ -193,7 +285,7 @@ nav {
 }
 
 .how-it-works-animation img {
-  width: 65%;
+  width: 70%;
 }
 
 .how-it-works {
@@ -201,6 +293,29 @@ nav {
   font-size: 5.2rem;
   color: #300031;
   font-weight: 500;
+}
+
+.participation-steps {
+  height: 30vh;
+  background-color: #ffe4ff;
+  color: #300031;
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.participation-steps img {
+  width: 18rem;
+  padding: 2rem;
+  border: 1px solid #fff;
+  background-color: white;
+  border-radius: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.step1 {
+  text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -216,6 +331,11 @@ nav {
     justify-self: center;
     grid-column: 1/-1;
   }
+
+  .participation-steps {
+    height: 180vh;
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -225,8 +345,13 @@ nav {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 530px) {
   html {
     font-size: 40%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: 35%;
   }
 }
