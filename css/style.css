@@ -128,7 +128,7 @@ nav {
 
 .challenge-section {
   position: relative;
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -140,11 +140,13 @@ nav {
   width: 0;
   height: 0;
   border-left: 50vw solid transparent;
-  border-top: 50vh solid #ffe4ff;
+  border-top: 35vh solid #ffe4ff;
 }
 
 .triangle-middle {
   background-color: #fcf5fc;
+  width: 0;
+  height: 0;
 }
 
 .triangle-bottom {
@@ -152,12 +154,12 @@ nav {
   width: 0;
   height: 0;
   border-right: 50vw solid transparent;
-  border-bottom: 50vh solid #ffe4ff;
+  border-bottom: 35vh solid #ffe4ff;
 }
 
 .next-challenge {
   position: absolute;
-  min-width: 60%;
+  min-width: 70%;
   top: 7%;
   left: 50%;
   text-align: center;
@@ -168,7 +170,7 @@ nav {
 }
 
 .challenge {
-  max-width: 42rem;
+  width: 80vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -177,64 +179,83 @@ nav {
   background-color: #fff;
   box-shadow: 0.5rem 0.5rem 1rem 0 #888;
   border-radius: 1rem;
-  cursor: pointer;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 2rem;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.challenge-header {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .challenge h3 {
   color: #300031;
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   font-weight: 500;
   margin-bottom: 1.2rem;
 }
-
 .challenge p,
 .challenge-types {
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+  line-height: 1.31;
   font-weight: 400;
 }
 
 .challenge-date-text {
   color: #851e87;
-  font-size: 1.6rem;
-  font-weight: 400;
-  margin-bottom: 3.6rem;
 }
+
 .challenge-date-text p:first-child {
   margin-bottom: 0.2rem;
 }
 
 .challenge-created-by {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
   row-gap: 0.8rem;
   margin-bottom: 2.4rem;
   align-items: center;
-}
 
-.challenge-created-by h4 {
-  grid-column: 1 / -1;
+  font-size: 3rem;
   color: #300031;
-  font-size: 1.8rem;
 }
-
 .challenge-creator-avatar {
-  width: 50%;
+  width: 30%;
   border-radius: 100%;
 }
-
 .challenge-athlete-rower-image {
-  grid-column: 1/-1;
+  grid-column: 2/3;
+  grid-row: 1/4;
+  width: 80rem;
   justify-self: center;
-  width: 140%;
   margin-bottom: 2.4rem;
 }
-
-.challenge-rules {
-  margin-bottom: 1.2rem;
+.challenge-entry-fee {
+  grid-row: 2;
+  grid-column: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 1.2rem; */
+  /* align-self: flex-end; */
 }
-
+.challenge-remaining-tickets {
+  grid-row: 3;
+  grid-column: 3;
+}
+.challenge-rules {
+  grid-row: 2;
+  grid-column: 1;
+}
+.challenge-list {
+  grid-row: 3;
+  grid-column: 1;
+}
 .challenge-types {
   margin: 0 0 1.8rem 3.2rem;
 }
@@ -243,20 +264,7 @@ nav {
   margin-left: 1.2rem;
 }
 
-.challenge-entry-fee {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.2rem;
-}
-
-.challenge-fee-text {
-  font-size: 1.8rem;
-  padding: 0.8rem 0;
-}
-
 .challenge-fee {
-  font-size: 1.8rem;
   background-color: #ffe4ff;
   padding: 0.8rem 2.4rem;
   border-radius: 1rem;
@@ -277,7 +285,7 @@ nav {
 
 .how-it-works-animation {
   margin: 10rem auto;
-  width: 70vw;
+  width: 90vw;
   text-align: center;
   border: 1px solid #eee;
   box-shadow: 0.5rem 0.5rem 1rem 0 #888;
@@ -296,13 +304,13 @@ nav {
 }
 
 .participation-steps {
-  height: 30vh;
+  height: auto;
+  padding: 4rem 0;
   background-color: #ffe4ff;
   color: #300031;
   font-size: 3rem;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .participation-steps img {
@@ -314,10 +322,68 @@ nav {
   margin-bottom: 1.2rem;
 }
 
-.step1 {
-  text-align: center;
+.participation-steps p {
+  font-size: 1.8rem;
+  max-width: 20rem;
 }
 
+@media only screen and (max-width: 1800px) {
+  .challenge-athlete-rower-image {
+    width: 70rem;
+  }
+  .challenge {
+    row-gap: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .challenge h3 {
+    font-size: 3rem;
+  }
+  .challenge p,
+  .challenge-types {
+    font-size: 1.8rem;
+    line-height: 1.31;
+    font-weight: 400;
+  }
+  .challenge-athlete-rower-image {
+    width: 50rem;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .challenge-athlete-rower-image {
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .challenge {
+    row-gap: 2px;
+    grid-template-rows: min-content min-content min-content;
+    padding: 1rem;
+  }
+  .challenge h3 {
+    font-size: 2rem;
+  }
+  .challenge p,
+  .challenge-types {
+    font-size: 1.2rem;
+    line-height: 1.31;
+    font-weight: 400;
+  }
+  .challenge-created-by {
+    font-size: 1rem;
+    color: #300031;
+  }
+  .challenge-athlete-rower-image {
+    width: 40rem;
+  }
+  .register:link,
+  .register:visited {
+    bottom: 4%;
+  }
+}
 @media only screen and (max-width: 1000px) {
   html {
     font-size: 50%;
@@ -331,10 +397,16 @@ nav {
     justify-self: center;
     grid-column: 1/-1;
   }
-
   .participation-steps {
-    height: 180vh;
+    height: auto;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .participation-steps p {
+    font-size: 2.4rem;
+    max-width: none;
+    margin-bottom: 2.4rem;
   }
 }
 
@@ -344,14 +416,85 @@ nav {
     display: none;
   }
 }
-
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 700px) {
   html {
     font-size: 40%;
   }
 }
-@media only screen and (max-width: 450px) {
+
+/*
+
+
+@media only screen and (max-width: 550px) {
   html {
-    font-size: 35%;
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-height: 880px) {
+  .challenge-created-by {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  html {
+    font-size: 40%;
+  }
+} */
+
+@media (max-width: 850px) and (orientation: portrait) {
+  .challenge {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .challenge-created-by {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .challenge-athlete-rower-image {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    justify-self: center;
+  }
+  .challenge-rules {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .challenge-list {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .challenge-entry-fee {
+    width: 50%;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 6;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 2.4rem;
+    background-color: #851e87;
+    border-radius: 1rem;
+    padding: 0.8rem;
+  }
+  .challenge-fee,
+  .challenge-fee-text {
+    background-color: #851e87;
+    border: none;
+    color: #fff;
+  }
+  .challenge-remaining-tickets {
+    justify-self: start;
+    grid-column: 1;
+    grid-row: 7;
   }
 }
